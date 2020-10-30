@@ -68,9 +68,9 @@ module PagSeguro
 
       def serialize_creditor(data)
         data[:creditor_fees] = {
-          intermediation_rate_amount: BigDecimal(xml.css("creditorFees > intermediationRateAmount").text.to_f.to_s),
-          intermediation_fee_amount: BigDecimal(xml.css("creditorFees > intermediationFeeAmount").text.to_f.to_s),
-          installment_fee_amount: BigDecimal(xml.css("creditorFees > installmentFeeAmount").text.to_f.to_s),
+          intermediation_rate_amount: BigDecimal(xml.css("creditorFees > intermediationRateAmount").text.to_f.to_s.presence || 0),
+          intermediation_fee_amount: BigDecimal(xml.css("creditorFees > intermediationFeeAmount").text.to_f.to_s.presence || 0),
+          installment_fee_amount: BigDecimal(xml.css("creditorFees > installmentFeeAmount").text.to_f.to_s.presence || 0),
         }
         operationalFeeAmount = xml.css("creditorFees > operationalFeeAmount").text
         data[:creditor_fees].merge!(operational_fee_amount: BigDecimal(operationalFeeAmount)) if operationalFeeAmount.present?
