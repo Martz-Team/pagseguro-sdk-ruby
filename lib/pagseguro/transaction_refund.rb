@@ -19,8 +19,8 @@ module PagSeguro
 
     # Calls the PagSeguro webservice and register the refund.
     # Return PagSeguro::TransactionRefund.
-    def register
-      response_request = Request.post("transactions/refunds", api_version, params)
+    def register(extra_params = {})
+      response_request = Request.post("transactions/refunds", api_version, params.merge(extra_params))
       Response.new(response_request, self).serialize
     end
 
