@@ -2,9 +2,9 @@
 require "./lib/pagseguro/version"
 
 Gem::Specification.new do |spec|
-  spec.name                  = "pagseguro-oficial"
+  spec.name                  = "pagseguro-sdk"
   spec.version               = PagSeguro::VERSION
-  spec.authors               = ["Nando Vieira"]
+  spec.authors               = ["Nando Vieira", "Henrique Jonas"]
   spec.email                 = ["fnando.vieira@gmail.com"]
   spec.summary               = "Biblioteca de integração com o PagSeguro"
   spec.description           = "Biblioteca oficial de integração via API com o PagSeguro"

@@ -7,5 +7,8 @@ module PagSeguro
 
     # Set the installments quantity.
     attr_accessor :quantity
+
+    # Set number of installments that the store takes on without interest
+    attr_accessor :no_interest_installment_quantity
   end
 end

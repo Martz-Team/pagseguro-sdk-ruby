@@ -147,6 +147,7 @@ module PagSeguro
 
         params[:installmentValue] = to_amount(installment.value)
         params[:installmentQuantity] = installment.quantity
+        params[:noInterestInstallmentQuantity] = installment.no_interest_installment_quantity        
       end
 
       def serialize_extra_params(extra_params)
